@@ -11,11 +11,20 @@ const newTaskInput = document.getElementById("new-list");
 const addTaskButton = document.getElementById("add-list");
 
 const tasks = loadTasks();
+task.forEach(task => {
+    addTask(task, taskList);
+});
 
 addTaskButton.addEventListener("Click", ()=>{
     const task = newTaskInput.value.trim();
-    tasks.push(tasks);
+    if(task){
+        addTask(task, taskList);
+        tasks.push(tasks);
+        saveTasks(tasks);
+        clearInput(newTaskInput);
+    }
     
-}
+    
+});
 
-function ()
+
